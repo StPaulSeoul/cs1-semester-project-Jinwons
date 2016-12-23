@@ -1,16 +1,24 @@
 
-public class Subway extends PublicTransportation {
+public class Subway   {
 	
-	Subway(){
-		minimumfare = 720;
-	}
+	int minimumFare = 720; 
+	int finalFare = 0;
+	int time = 0;
+	int age;
 
-	@Override
-	int getfare(int distance) {
-		if (distance > 10000){
-			additionalfare = (distance - 10000) / 5000 * 100;
+	public int calculateMyfare(int distance , int age) {
+		if (age > 20){
+			minimumFare = 1000;
 		}
-		return distance;
-	}
+		else if (age > 14){
+			minimumFare = 720;
+		}
+		else {
+			minimumFare = 450;
+		}
+		
+		finalFare = minimumFare + (distance - 10000) / 5000 * 100;
 	
-	}
+		return finalFare;
+}
+}

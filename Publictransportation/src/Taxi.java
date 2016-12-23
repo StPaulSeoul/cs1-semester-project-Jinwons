@@ -1,21 +1,16 @@
 
-public class Taxi extends PublicTransportation {
+public class Taxi {
 
-	Taxi(){
-		minimumfare = 3000;
-	}
+	int minimumFare = 3000; 
+	int finalFare = 0;
+	int time = 0;
+	int age;
 
-	int getfare(int distance) {
-		if (time <=4){
-		if (distance > 2000){
-			additionalfare = (distance - 2000) / 142 * 100;
+	public int calculateMyfare(int distance) {
+		if(distance > 2000) {
+			finalFare = minimumFare + (distance - 2000) / 142 * 100;
 		}
+		return finalFare;
 	}
-		else if (time <= 24)
-			if (distance > 2000){
-				additionalfare = (distance -2000) / 142 * 120;
-			}
-		return minimumfare + additionalfare;
+
 }
-}
-//taxi has to different from bus and taxi.
